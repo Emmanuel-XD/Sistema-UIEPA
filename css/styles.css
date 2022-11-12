@@ -130,6 +130,22 @@
     display: inline-block;
     
     }
+    .pdf 
+    {
+        background: #7a191e;
+        color: none;
+        color: #ffffff;
+        font-weight: bold;
+        padding: 15px;
+        border: 2px solid #5a5c69;
+        border-radius: 6px;
+        text-align:center;
+        width: 90%;
+        margin: 20px;  
+        display: inline-block;
+        display: inline-block;
+    
+    }
     /* colores para tabla */
     .electronico {
          font-weight: bold; padding: 15px; border-left:20px solid #05e3be;
@@ -158,3 +174,4 @@
     .deportes {
         font-weight: bold; padding: 15px; border-left:20px solid #eff2b7;
     }
+ 
