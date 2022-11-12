@@ -62,9 +62,9 @@ $categoria = $_GET['categoria'];
 extract($_POST);
 require_once ("db.php");   
 $sql = "SELECT * FROM insumo WHERE categoria = '$categoria'";
-$productos = mysqli_query($conexion, $sql);
-if($productos -> num_rows > 0){
-foreach($productos as $key => $row ){
+$resultado = mysqli_query($conexion, $sql);
+if($resultado -> num_rows > 0){
+
 
 $pdf = new PDF();
 $pdf=new PDF('L','mm','letter');
@@ -72,7 +72,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Arial','',0);
 //$pdf->SetWidths(array(10, 30, 27, 27, 20, 20, 20, 20, 22));
-while ($row=$resultado->fetch_assoc()) {
+foreach($resultado as $key => $row ){
 
     $pdf->SetX(17);
 
@@ -89,7 +89,7 @@ while ($row=$resultado->fetch_assoc()) {
 
 } 
 }
-}
+
 
 	$pdf->Output();
 ?>
