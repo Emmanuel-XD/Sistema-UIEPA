@@ -39,12 +39,9 @@ session_start();
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar datos   </a></button>
 
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoria">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias</a></button>
-                                
-                            <a href="../includes/reporte_cat.php?categoria=<?php echo'VETERINARIA'?>" class="btn btn-outline-danger">
-                            <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
-                        </div>
+                          
                         
                         <div class="card-body">
                             <div class="table-responsive">

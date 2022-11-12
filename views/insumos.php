@@ -39,14 +39,35 @@ session_start();
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar datos   </a></button>
 
-                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#categoria">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias</a></button>
                                 
                             <a href="../includes/reporte.php" class="btn btn-outline-danger">
                             <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
+
+                            <label for="cat" class="form-label"></label>
+                            <select name="select" id="select" class="control" required>
+                            <option value="0" >--Ver por categoria--</option>
+ 
+                                  <?php
+
+                            include ("../includes/db.php");
+                            //Codigo para mostrar categorias desde otra tabla
+                            $sql="SELECT * FROM categorias ";
+                            $resultado=mysqli_query($conexion, $sql);
+                            while($consulta=mysqli_fetch_array($resultado)){
+                            echo '<option value="'.$consulta['nombre'].'">'.$consulta['nombre'].'</option>';
+                               }
+
+                                   ?>
+                              </select>
                         </div>
+                        <style>
+
+                        </style>
                         
                         <div class="card-body">
+                        <div class="class">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
@@ -59,7 +80,8 @@ session_start();
                                             <th>Marca</th>
                                             <th>Existencia</th>
                                             <th>Categoria</th>
-                                            <th>Acciones</th>
+                                            <th>Acciones...</th>
+                                            <th>Entregar</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -86,6 +108,9 @@ while ($fila = mysqli_fetch_assoc($result)):
 <i  class="fa fa-edit "></i> </a>
 <a href="../includes/eliminar_insumo.php?id=<?php echo $fila['id']?> " class="btn btn-danger btn-del" >
 <i  class="fa fa-trash "></i></a></button>
+</td>
+<td>
+<input type="number" class="cuadro" name="" id="">
 </td>
 </tr>
 
@@ -153,8 +178,30 @@ Swal.fire({
     </div>
     <!-- End of Page Wrapper -->
 
- 
+    </div>
 
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#select").on('change', function(){
+            var value = $(this).val();
+            //alert(value);
+            $.ajax({
+                url:'fecth.php',
+                type:'POST',
+                data:'request=' + value,
+                beforeSend:function(){
+                    $(".class").html("<span>Working..</span>");
+
+                },
+
+                success:function(data){
+                    $(".class").html(data);
+                }
+            }); 
+        });
+    });
+</script>
 
 </body>
 
