@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require '../includes/header.php' ?>
+<?php require '../includes/header.php';
+
+    ?>
 <body>
     <div class="row">
         <div class="col-sm-4">
-<a class="catelectronico" href="productosCategoria.php?categoria=<?php ?>">
+<a class="catelectronico" href="productosCategoria.php?categoria=<?php echo 'ENFERMERIA'?>">
 ENFERMERIA
 </a>
         </div>
 <div class="col-sm-4">
-<a class="catcocina" href="productosCategoria.php?categoria=<?php ?>">
+<a class="catcocina" href="productosCategoria.php?categoria=<?php echo 'GASTRONOMIA'?>">
 GASTRONOMIA
 </a>
 </div>  
 <div class="col-sm-4">
-<a class="catfarmaceutico" href="productosCategoria.php?categoria=<?php ?>">
+<a class="catfarmaceutico" href="productosCategoria.php?categoria=<?php echo 'AGROINDUSTRIAL' ?>">
 AGROINDUSTRIAL
 </a>
 </div>  
 </div>
 <div class="row">
 <div class="col-sm-4">
-<a class="catjugueteria" href="productosCategoria.php?categoria=<?php ?>">
+<a class="catjugueteria" href="productosCategoria.php?categoria=<?php echo 'BIOTECNOLOGIA'?>">
 BIOTECNOLOGIA
 </a>
 </div>
 
 <div class="col-sm-4">
-<a class="catmascotas" href="productosCategoria.php?categoria=<?php ?>">
+<a class="catmascotas" href="productosCategoria.php?categoria=<?php echo'VETERINARIA'?>">
 VETERINARIA
 </a>
 </div>
@@ -61,5 +63,5 @@ VETERINARIA
     </div>
 </div>
 </body>
-<?php require '../includes/footer.php' ?>
+<?php require '../includes/footer.php'; ?>
 </html>
