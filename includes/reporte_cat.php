@@ -22,7 +22,7 @@ function Header()
     $this->Cell(100);
 
     // Título
-    $this->Cell(70,10,'Reporte de insumos',0,0,'C');
+    $this->Cell(70,10,'REPORTE DE' ,0,0,'C');
     // Salto de línea
    
     $this->Ln(30);

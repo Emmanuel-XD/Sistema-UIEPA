@@ -23,6 +23,10 @@ if (isset($_POST['accion'])){
             editar_datos();
             break;
 
+            case 'editar_calculo';
+            editar_calculo();
+            break;
+
         }
 
 	}
@@ -121,6 +125,26 @@ function editar_datos() {
          echo "<script language='JavaScript'>
          alert('Ocurrio un error inesperado');
          location.assign('../views/insumos.php');
+         </script>";
+}
+
+}
+function editar_calculo() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET existencia = '$existencia' WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('El registro ');
+        location.assign('../views/insumos.php');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/insumo.php');
          </script>";
 }
 
