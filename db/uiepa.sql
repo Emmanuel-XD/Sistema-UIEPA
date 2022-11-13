@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2022 a las 06:26:01
+-- Tiempo de generación: 13-11-2022 a las 07:28:22
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.8
 
@@ -58,7 +58,8 @@ CREATE TABLE `insumo` (
   `nombre` varchar(150) NOT NULL,
   `fecha_caducidad` date NOT NULL,
   `marca` varchar(150) NOT NULL,
-  `existencia` varchar(150) NOT NULL,
+  `entregado` int(50) NOT NULL,
+  `existencia` int(150) NOT NULL,
   `categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -66,10 +67,14 @@ CREATE TABLE `insumo` (
 -- Volcado de datos para la tabla `insumo`
 --
 
-INSERT INTO `insumo` (`id`, `fecha_entrada`, `cantidad`, `unidad`, `nombre`, `fecha_caducidad`, `marca`, `existencia`, `categoria`) VALUES
-(1, '2022-11-11', 100, 'PZA', 'usuario', '2022-11-26', 'Prueba', '10', 'GASTRONOMIA'),
-(3, '2022-11-17', 100, 'PZAss', 'Isnumo', '2022-11-24', 'Prueba', '10', 'VETERINARIA'),
-(4, '2022-11-15', 200, 'PZA', 'Material', '2022-12-01', 'FERMONT', '10', 'VETERINARIA');
+INSERT INTO `insumo` (`id`, `fecha_entrada`, `cantidad`, `unidad`, `nombre`, `fecha_caducidad`, `marca`, `entregado`, `existencia`, `categoria`) VALUES
+(22, '2022-11-09', 200, 'Metros', 'sfdg', '2022-11-10', '100', 1, 3, 'GASTRONOMIA'),
+(23, '2022-11-03', 200, 'Rollos', 'Emanuel', '2022-11-11', 'Prueba', 20, 20, 'ENFERMERIA'),
+(26, '2022-11-01', 100, 'Paquetes', 'Emanuel', '2022-11-16', 'hge', 5, 5, 'BIOTECNOLOGIA'),
+(28, '2022-11-11', 100, 'Litros', 'usuario', '2022-11-16', 'FERMONT', 1, 1, 'VETERINARIA'),
+(29, '2022-11-14', 100, 'Piezas', 'usuario', '2022-11-08', 'Prueba', 0, 10, 'AGROINDUSTRIAL'),
+(30, '2022-11-09', 100, 'Gr', 'Emanuel', '2022-11-16', 'Prueba', 0, 10, 'VETERINARIA'),
+(31, '2022-11-01', 200, 'Piezas', 'Emanuel', '2022-11-29', 'Prueba', 0, 10, 'ENFERMERIA');
 
 -- --------------------------------------------------------
 
@@ -140,7 +145,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `insumo`
 --
 ALTER TABLE `insumo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de la tabla `permisos`
