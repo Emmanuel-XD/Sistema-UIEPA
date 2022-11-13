@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 </head>
 <body>
-<form  action="validar.php" method="POST">
+<form  action="sessionValidator.php" method="POST">
 <div id="login" >
+<input type="text" name="login" id="login" value="null" class="user">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                        <form id="login-form" class="form" action="login" method="post">
                             <br>
                             <h3 class="text-center">SISTEMA | UIEPA</h3>
                             <h4 class="text-center">Iniciar Sesion</h4>

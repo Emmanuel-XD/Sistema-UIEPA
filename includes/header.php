@@ -1,6 +1,11 @@
 <?php 
-
-
+session_start();
+$usuario = $_SESSION['user'];
+$permiso = $_SESSION['type'];
+if($usuario == null && $permiso == null){
+    header ("location: ../includes/sesion/login.php");
+   
+}
 ?>
 
  
@@ -8,6 +13,7 @@
 <html lang="en">
 
 <head>
+
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,6 +124,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
+            <?php if($_SESSION["type"] == 1){ ?>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -132,10 +139,6 @@
                     </div>
                 </div>
             </li>
-
-            
-
-            <?php //if( $actualsesion == "Administrador"){?>
                 
             <!-- Nav Item - user -->
             <li class="nav-item">
@@ -144,13 +147,8 @@
                 <i class="fa fa-user" aria-hidden="true"></i>
                     <span>Informacion de sesion</span></a>
             </li>
-
-            <?php
- //};
-
-   ?> 
-
-
+<?php }
+?>
 
 
             <!-- Divider -->

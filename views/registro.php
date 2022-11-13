@@ -1,10 +1,4 @@
-<?php
-
-
-
-    ?>
-
-
+<?php if($_SESSION["type"] == 1){ ?>
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -13,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registros</title>
     <link rel="stylesheet" href="../package/dist/sweetalert2.css">
-    
+    <link rel="stylesheet" href="../css/register.css">
 </head>
 
 <body id="page-top">
@@ -27,7 +21,9 @@
                 </div>
                 <div class="modal-body">
 
-             <form  action="../includes/functions.php" method="POST">
+             <form  action="../includes/sesion/sessionValidator.php" method="POST">
+             <input type="text" name="register" id="register" value="null" class="user">
+
                             <div class="form-group">
                             <label for="nombre" class="form-label">Nombre *</label>
                             <input type="text"  id="nombre" name="nombre" class="form-control" required>
@@ -39,6 +35,10 @@
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>
                                 <input type="password" name="password" id="password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="conf_password">Confirmar contraseña:</label><br>
+                                <input type="conf_password" name="conf_password" id="conf_password" class="form-control" required>
                             </div>
 
                             <div class="form-group">
@@ -70,3 +70,7 @@
     
 </body>
 </html>
+<?php }
+else
+header("location: index.php");
+?>

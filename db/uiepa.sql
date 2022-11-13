@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 13-11-2022 a las 07:28:22
--- Versión del servidor: 10.4.20-MariaDB
--- Versión de PHP: 8.0.8
+-- Host: 127.0.0.1
+-- Generation Time: Nov 13, 2022 at 08:05 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `uiepa`
+-- Database: `uiepa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +34,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `fecha`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `categorias` (`id`, `nombre`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `insumo`
+-- Table structure for table `insumo`
 --
 
 CREATE TABLE `insumo` (
@@ -58,113 +58,125 @@ CREATE TABLE `insumo` (
   `nombre` varchar(150) NOT NULL,
   `fecha_caducidad` date NOT NULL,
   `marca` varchar(150) NOT NULL,
-  `entregado` int(50) NOT NULL,
-  `existencia` int(150) NOT NULL,
+  `existencia` varchar(150) NOT NULL,
   `categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `insumo`
+-- Dumping data for table `insumo`
 --
 
-INSERT INTO `insumo` (`id`, `fecha_entrada`, `cantidad`, `unidad`, `nombre`, `fecha_caducidad`, `marca`, `entregado`, `existencia`, `categoria`) VALUES
-(22, '2022-11-09', 200, 'Metros', 'sfdg', '2022-11-10', '100', 1, 3, 'GASTRONOMIA'),
-(23, '2022-11-03', 200, 'Rollos', 'Emanuel', '2022-11-11', 'Prueba', 20, 20, 'ENFERMERIA'),
-(26, '2022-11-01', 100, 'Paquetes', 'Emanuel', '2022-11-16', 'hge', 5, 5, 'BIOTECNOLOGIA'),
-(28, '2022-11-11', 100, 'Litros', 'usuario', '2022-11-16', 'FERMONT', 1, 1, 'VETERINARIA'),
-(29, '2022-11-14', 100, 'Piezas', 'usuario', '2022-11-08', 'Prueba', 0, 10, 'AGROINDUSTRIAL'),
-(30, '2022-11-09', 100, 'Gr', 'Emanuel', '2022-11-16', 'Prueba', 0, 10, 'VETERINARIA'),
-(31, '2022-11-01', 200, 'Piezas', 'Emanuel', '2022-11-29', 'Prueba', 0, 10, 'ENFERMERIA');
+INSERT INTO `insumo` (`id`, `fecha_entrada`, `cantidad`, `unidad`, `nombre`, `fecha_caducidad`, `marca`, `existencia`, `categoria`) VALUES
+(1, '2022-11-11', 100, 'PZA', 'usuario', '2022-11-26', 'Prueba', '10', 'GASTRONOMIA'),
+(3, '2022-11-17', 100, 'PZAss', 'Isnumo', '2022-11-24', 'Prueba', '10', 'VETERINARIA'),
+(4, '2022-11-15', 200, 'PZA', 'Material', '2022-12-01', 'FERMONT', '10', 'VETERINARIA'),
+(8, '2022-11-13', 1, 'Litros', 'test', '2022-12-07', 'a2', '12', 'ENFERMERIA');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `permisos`
+-- Table structure for table `permisos`
 --
 
 CREATE TABLE `permisos` (
   `id` int(11) NOT NULL,
-  `rol` int(50) NOT NULL
+  `rol` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `permisos`
+--
+
+INSERT INTO `permisos` (`id`, `rol`) VALUES
+(1, 'Administrator'),
+(2, 'User');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL,
   `correo` varchar(100) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `rol_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Índices para tablas volcadas
+-- Dumping data for table `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `correo`, `password`, `fecha`, `rol_id`) VALUES
+(5, 'test', 'TestMail@test.com', '$2y$05$n1.ToLDbZBSBV5ROlOstPelG6UaQR56KzRDuKIDAW8nl4XdqfOwiu', '2022-11-13 17:51:47', 1),
+(6, 'cocinero', 'cocina.emp@empc.com', '$2y$05$Yx5VEq5.degJvgiZEUVSBOieZtxvHeVK6y1JHqlj..4h/z/HDbMfq', '2022-11-13 18:57:49', 2);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `categorias`
+-- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `insumo`
+-- Indexes for table `insumo`
 --
 ALTER TABLE `insumo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `permisos`
+-- Indexes for table `permisos`
 --
 ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD KEY `permisos` (`rol_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `insumo`
+-- AUTO_INCREMENT for table `insumo`
 --
 ALTER TABLE `insumo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `permisos`
+-- AUTO_INCREMENT for table `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `usuarios`
+-- Constraints for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `permisos` FOREIGN KEY (`rol_id`) REFERENCES `permisos` (`id`);
