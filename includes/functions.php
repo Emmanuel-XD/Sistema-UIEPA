@@ -132,13 +132,13 @@ function editar_datos() {
 function editar_calculo() {
     require_once ("db.php");
     extract($_POST);
-    $consulta="UPDATE insumo SET existencia = '$existencia' WHERE id = '$id' ";
+    $consulta="UPDATE insumo SET  existencia = '$existencia' - '$entregado', entregado = '$entregado' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
    if($resultado){
         echo "
         <script language='JavaScript'>
-        alert('El registro ');
+        alert('La entrega fue completada ');
         location.assign('../views/insumos.php');
         </script>";
    } else{

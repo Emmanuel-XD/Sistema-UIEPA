@@ -35,7 +35,7 @@ function Header()
     $this->Cell(25,10,'Caducidad',1,0,'C',0);
     $this->Cell(30,10,'Marca',1,0,'C',0);
     $this->Cell(20,10,'Existencia',1,0,'C',0);
-    $this->Cell(32,10,'Categorias',1,1,'C',0);
+    $this->Cell(35,10,'Categorias',1,1,'C',0);
 	
 
   
@@ -79,7 +79,7 @@ while ($row=$resultado->fetch_assoc()) {
     $pdf->Cell(25,10, $row['fecha_caducidad'],1,0,'C',0);
     $pdf->Cell(30,10, $row['marca'],1,0,'C',0);
     $pdf->Cell(20,10, $row['existencia'],1,0,'C',0);
-    $pdf->Cell(32,10,$row['categoria'],1,1,'C',0);
+    $pdf->Cell(35,10,$row['categoria'],1,1,'C',0);
 	
 
 

@@ -45,12 +45,20 @@ $usuario = mysqli_fetch_assoc($resultado);
                             <label for="nombre" class="form-label">Cantidad *</label>
                             <input type="text"  id="cantidad" name="cantidad" class="form-control" value="<?php echo $usuario ['cantidad']; ?>" required>
                             </div>
-
+                            
                             <div class="form-group">
-                            <label for="nombre" class="form-label">Unidad*</label>
-                            <input type="text"  id="unidad" name="unidad" class="form-control" value="<?php echo $usuario ['unidad']; ?>" required>
-                            </div>
-
+                            <label for="unidad" class="form-label">Unidad/Medida</label>
+                            <select name="unidad" id="unidad" class="form-control" required >
+                            <option <?php echo $usuario ['unidad']==='Litros' ? "selected='selected' ": "" ?> value="Litros">Litros</option>
+                            <option <?php echo $usuario ['unidad']==='Mililitros' ? "selected='selected' ": "" ?> value="Mililitros">Mililitros</option>
+                            <option <?php echo $usuario ['unidad']==='Piezas' ? "selected='selected' ": "" ?> value="Piezas">Piezas</option>
+                            <option <?php echo $usuario ['unidad']==='Kg' ? "selected='selected' ": "" ?> value="Kg">Kg</option>
+                            <option <?php echo $usuario ['unidad']==='Gr' ? "selected='selected' ": "" ?> value="Gr">Gr</option>
+                            <option <?php echo $usuario ['unidad']==='Metros' ? "selected='selected' ": "" ?> value="Metros">Metros</option>
+                            <option <?php echo $usuario ['unidad']==='Paquetes' ? "selected='selected' ": "" ?> value="Paquetes">Paquetes</option>
+                            <option <?php echo $usuario ['unidad']==='Rollos' ? "selected='selected' ": "" ?> value="Rollos">Rollos</option>
+                            </select>    
+                        </div>
                             <div class="form-group">
                             <label for="nombre" class="form-label">Reactivo/Insumo *</label>
                             <input type="text"  id="nombre" name="nombre" class="form-control" value="<?php echo $usuario ['nombre']; ?>"required>
