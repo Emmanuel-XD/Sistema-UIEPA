@@ -10,7 +10,7 @@ if(isset($_POST['request'])){
     $count = mysqli_num_rows($resultado);
 }
 ?>
-
+    <script src="../js/bootstrap.min.js"></script>
 <script src="../js/jquery.min.js"></script>
 
 <div class="card-body">
@@ -23,6 +23,7 @@ if(isset($_POST['request'])){
         ?>    
                                 <thead>
                                         <tr>
+                                            <th>Codigo</th>
                                             <th>Fecha Entrada</th>
                                             <th>Cantidad</th>
                                             <th>Unidad/Medida</th>
@@ -31,7 +32,8 @@ if(isset($_POST['request'])){
                                             <th>Marca</th>
                                             <th>Existencia</th>
                                             <th>Categoria</th>
-                                            <th>Acciones</th>
+                                            <th>Acciones..</th>
+                                            <th>Entregar</th>
                                         </tr>
                                     </thead>
                             
@@ -45,7 +47,27 @@ if(isset($_POST['request'])){
                                     <?php
     while($fila = mysqli_fetch_assoc($resultado)){
         ?>
+        
+<?php
+
+if ($fila['cantidad'] <= $fila['existencia']) {
+  $color = '#F78E8E';
+  $clase = 'problema';
+} else {
+  $clase = 'correcto';
+}
+ 
+// ...
+
+?>
+<style>
+      .problema{
+        background-color: <?php echo $color?>;
+        color: #000000;
+    }
+</style>
         <tr>
+<td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
 <td><?php echo $fila['cantidad']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
@@ -62,12 +84,22 @@ if(isset($_POST['request'])){
 <a href="../includes/eliminar_insumo.php?id=<?php echo $fila['id']?> " class="btn btn-danger btn-del" >
 <i  class="fa fa-trash "></i></a></button>
 </td>
+<td>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entrega<?php echo $fila['id']; ?>">
+<i class="fa fa-archive" aria-hidden="true"></i>
+</button>
+<?php  include "editar.php"; ?>
+</td>
+
 </tr>
+
+
 <?php
 
     }
     ?>
-</table>
+  </tbody>
+    </table>
                   
 <script>
   $('.btn-del').on('click', function(e){

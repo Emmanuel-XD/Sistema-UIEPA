@@ -8,52 +8,51 @@
     <center>
     <div class="row">
         <div class="col-sm-4">
-<a class="catelectronico" href="productosCategoria.php?categoria=<?php echo 'ENFERMERIA'?>">
+<a class="ENFERMERIA" href="productosCategoria.php?categoria=<?php echo 'ENFERMERIA'?>">
 <img src="../img/enfer.png" width="130px" height="120px" alt="">
 ENFERMERIA
 </a>
-<a class="pdf" href="../includes/reporte_cat.php?categoria=<?php echo'ENFERMERIA'?>">
+<a class="pdf" href="../includes/reportes/reporte_enfermeria.php?categoria=<?php echo'ENFERMERIA'?>">
 VER PDF- ENFERMERIA
 </a>
         </div>
 <div class="col-sm-4">
-<a class="catcocina" href="productosCategoria.php?categoria=<?php echo 'GASTRONOMIA'?>">
+<a class="GASTRONOMIA" href="productosCategoria.php?categoria=<?php echo 'GASTRONOMIA'?>">
 <img src="../img/gastronomia.jpg" width="130px" height="120px" alt="">
 GASTRONOMIA
 </a>
-<a class="pdf" href="../includes/reporte_cat.php?categoria=<?php echo'GASTRONOMIA'?>">
+<a class="pdf" href="../includes/reportes/reporte_gastronomia.php?categoria=<?php echo'GASTRONOMIA'?>">
 VER PDF - GASTRONOMIA
 </a>
 </div>  
 <div class="col-sm-4">
-<a class="catfarmaceutico" href="productosCategoria.php?categoria=<?php echo 'AGROINDUSTRIAL' ?>">
+<a class="AGROINDUSTRIAL" href="productosCategoria.php?categoria=<?php echo 'AGROINDUSTRIAL' ?>">
 <img src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
 AGROINDUSTRIAL
 </a>
-<a class="pdf" href="../includes/reporte_cat.php?categoria=<?php echo'AGROINDUSTRIAL'?>">
+<a class="pdf" href="../includes/reportes/reporte_agroindustrial.php?categoria=<?php echo'AGROINDUSTRIAL'?>">
 VER PDF - AGROINDUSTRIAL
 </a>
 </div>  
 </div>
-</center>
-<center>
+
 <div class="row">
 <div class="col-sm-4">
-<a class="catjugueteria" href="productosCategoria.php?categoria=<?php echo 'BIOTECNOLOGIA'?>">
+<a class="BIOTECNOLOGIA" href="productosCategoria.php?categoria=<?php echo 'BIOTECNOLOGIA'?>">
 <img src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
 BIOTECNOLOGIA
 </a>
-<a class="pdf" href="../includes/reporte_cat.php?categoria=<?php echo'BIOTECNOLOGIA'?>">
+<a class="pdf" href="../includes/reportes/reporte_biotecnologia.php?categoria=<?php echo'BIOTECNOLOGIA'?>">
 VER PDF - BIOTECNOLOGIA
 </a>
 </div>
 
 <div class="col-sm-4">
-<a class="catmascotas" href="productosCategoria.php?categoria=<?php echo'VETERINARIA'?>">
+<a class="VETERINARIA" href="productosCategoria.php?categoria=<?php echo'VETERINARIA'?>">
 <img src="../img/veterinaria.webp" width="130px" height="120px" alt="">
 VETERINARIA
 </a>
-<a class="pdf" href="../includes/reporte_cat.php?categoria=<?php echo'VETERINARIA'?>">
+<a class="pdf" href="../includes/reportes/reporte_veterinaria.php?categoria=<?php echo'VETERINARIA'?>">
 VER PDF - VETERINARIA
 </a>
 </div>

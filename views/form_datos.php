@@ -46,12 +46,22 @@
                                 </div>
                               </div>
 
-                        <div class="row">
+                                   <div class="row">
                             <div class="col-sm-6">
                               <div class="mb-3">
-                             <label for="nombre" class="form-label">Unidad*</label>
-                             <input type="text"  id="unidad" name="unidad" class="form-control">
-                                    </div>
+                                  <label for="rol" class="form-label">Unidad/Medida</label>
+                                  <select name="unidad" id="unidad" class="form-control" required>
+                                  <option value="">--Selecciona una opcion--</option>
+                                  <option value="Litros">Litros</option>
+                                  <option value="Mililitros">Mililitros</option>
+                                  <option value="Piezas">Piezas</option>
+                                  <option value="Kg">Kg</option>
+                                  <option value="Gr">Gr</option>
+                                  <option value="Metros">Metros</option>
+                                  <option value="Paquetes">Paquetes</option>
+                                  <option value="Rollos">Rollos</option>
+                               </select>
+                               </div>
                                    </div>
 
                         <div class="col-sm-6">
@@ -82,7 +92,7 @@
 
                             <div class="form-group">
                             <label for="nombre" class="form-label">Existencia *</label>
-                            <input type="text"  id="existencia" name="existencia" class="form-control" required>
+                            <input type="number"  id="existencia" name="existencia" class="form-control" required>
                             </div>
 
                             <div class="form-group ">
@@ -108,7 +118,7 @@
                                 <div class="mb-3">
                                     
                                <input type="submit" value="Guardar" id="register" class="btn btn-success">
-                               <a href="usuarios.php" class="btn btn-danger">Cancelar</a>
+                               <a href="insumos.php" class="btn btn-danger">Cancelar</a>
                                
                             </div>
                             </div>

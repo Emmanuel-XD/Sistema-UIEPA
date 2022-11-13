@@ -14,7 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.min.js"></script>
 
 </head>
@@ -37,10 +37,10 @@ session_start();
                             <br>
 
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
-				            <span class="glyphicon glyphicon-plus"></span> Agregar datos   </a></button>
+				            <span class="glyphicon glyphicon-plus"></span> Agregar insumos <i class="fa fa-plus" aria-hidden="true"></i>  </a></button>
 
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
-				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias</a></button>
+				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias <i class="fa fa-tag" aria-hidden="true"></i></a></button>
                                 
                             <a href="../includes/reporte.php" class="btn btn-outline-danger">
                             <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
@@ -72,6 +72,7 @@ session_start();
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Codigo</th>
                                             <th>Fecha Entrada</th>
                                             <th>Cantidad</th>
                                             <th>Unidad/Medida</th>
@@ -93,14 +94,34 @@ $result=mysqli_query($conexion,"SELECT * FROM insumo ");
 while ($fila = mysqli_fetch_assoc($result)):
     
 ?>
+
+<?php
+
+if ($fila['cantidad'] <= $fila['existencia']) {
+  $color = '#F78E8E';
+  $clase = 'problema';
+} else {
+  $clase = 'correcto';
+}
+ 
+// ...
+
+?>
+<style>
+      .problema{
+        background-color: <?php echo $color?>;
+        color: #000000;
+    }
+</style>
 <tr>
+<td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
 <td><?php echo $fila['cantidad']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
-<td><?php echo $fila['existencia']; ?></td>
+<td><?php echo $fila['existencia'];?></td>
 <td><?php echo $fila['categoria']; ?></td>
 
 <td>
@@ -110,10 +131,12 @@ while ($fila = mysqli_fetch_assoc($result)):
 <i  class="fa fa-trash "></i></a></button>
 </td>
 <td>
-<input type="number" class="cuadro" name="" id="">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entrega<?php echo $fila['id']; ?>">
+<i class="fa fa-archive" aria-hidden="true"></i>
+</button>
 </td>
 </tr>
-
+<?php  include "editar.php"; ?>
 
 <?php endwhile;?>
                                     </tbody>
