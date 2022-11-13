@@ -1,4 +1,19 @@
-.catelectronico {
+.control {
+ 
+    /* width: 100%; */
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem; 
+     font-size: 1rem; 
+     font-weight: 400; 
+     line-height: 1.5; 
+  color: #6e707e; 
+  background-color: #fff; 
+    background-clip: padding-box; 
+    border: 1px solid #d1d3e2;
+    border-radius: 0.35rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.ENFERMERIA {
     background: #05e3be;
     color: #5a5c69;
     font-weight: bold;
@@ -6,12 +21,12 @@
     border: 2px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
-    width: 90%;
+    width: 50%;
     margin: 20px;
     display: inline-block;
     
     }
-    .catcocina {
+    .GASTRONOMIA {
     background: #c2b7f2;
     color: #5a5c69;
     font-weight: bold;
@@ -19,12 +34,12 @@
     border: 2px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
-    width: 90%;
+    width: 50%;
     margin: 20px;
     display: inline-block;
     
     }
-    .catfarmaceutico {
+    .AGROINDUSTRIAL{
     background: #C9F2B7;
     color: #5a5c69;
     font-weight: bold;
@@ -32,11 +47,11 @@
     border: 2px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
-    width: 90%;
+    width: 50%;
     margin: 20px;
     display: inline-block;
     }
-    .catjugueteria {
+    .BIOTECNOLOGIA{
     background: #f9bd93;
     color: #5a5c69;
     font-weight: bold;
@@ -44,12 +59,12 @@
     border: 2px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
-    width: 90%;
+    width: 50%;
     margin: 20px;
     display: inline-block;
     
     }
-    .catmascotas
+    .VETERINARIA
     {
     background: #fbf4136b;
     color: #5a5c69;
@@ -58,67 +73,13 @@
     border: 2px solid #5a5c69;
     border-radius: 6px;
     text-align:center;
-    width: 90%;
+    width: 50%;
     margin: 20px;   
     display: inline-block;
     }
-    .catautomovilstico {
-    background: #5a5c698c;
-    color: #5a5c69;
-    font-weight: bold;
-    padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
-    text-align:center;
-    width: 90%;
-    margin: 20px;  
-    display: inline-block;
-    
-    }
-    .catvestimenta {
-    background: #7f8bb9;
-    color: #5a5c69;
-    font-weight: bold;
-    padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
-    text-align:center;
-    width: 90%;
-    margin: 20px;  
-    display: inline-block;
-    
-    }
-    .cattelefonia {
-        background: #b7ccf2;
-        color: #5a5c69;
-        font-weight: bold;
-        padding: 15px;
-        border: 2px solid #5a5c69;
-        border-radius: 6px;
-        text-align:center;
-        width: 90%;
-        margin: 20px;   
-        display: inline-block;
-    
-    }
-    .catdeportes {
-    background: #eff2b7;
-    color: #5a5c69;
-    font-weight: bold;
-    padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
-    text-align:center;
-    width: 90%;
-    margin: 20px;  
-    display: inline-block;
-    display: inline-block;
-    
-    
-    }
     .soon 
     {
-        background: #eff2b7;
+    background: #eff2b7;
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
@@ -133,21 +94,21 @@
     .pdf 
     {
         background: #7a191e;
-        color: none;
+        text-decoration: none;
         color: #ffffff;
         font-weight: bold;
         padding: 15px;
         border: 2px solid #5a5c69;
         border-radius: 6px;
         text-align:center;
-        width: 90%;
+        width: 50%;
         margin: 20px;  
         display: inline-block;
         display: inline-block;
     
     }
     /* colores para tabla */
-    .electronico {
+    .enfermeria {
          font-weight: bold; padding: 15px; border-left:20px solid #05e3be;
     }
     .cocina {
