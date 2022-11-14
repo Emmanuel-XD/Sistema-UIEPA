@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
 </head>
 <body>
-<form  action="sessionValidator.php" method="POST">
+<form  id="loginForm" name="loginData">
 <div id="login" >
 <input type="text" name="login" id="login" value="null" class="user">
         <div class="container">
@@ -21,6 +21,8 @@
                             <h3 class="text-center">SISTEMA | UIEPA</h3>
                             <h4 class="text-center">Iniciar Sesion</h4>
                             <br>
+                            <div id="alert">
+                            </div>
                             <div class="form-group">
                                 <label for="username">Correo:</label><br>
                                 <input type="text" name="correo" id="correo" class="form-control" required>
@@ -31,11 +33,7 @@
                             </div>
                             <div class="form-group">
                              <br>
-                                <input type="submit"class="btn btn-success btn-md space" value="ingresar">
-                                <div id="register-link" class="text-right">
-                                    <br>
-                              
-                            </div>
+                                <input type="submit"class="btn btn-success btn-md space" value="ingresar" id="loginBtn">
                             </div>
                         </form>
                     </div>
@@ -45,4 +43,5 @@
     </div>
     </form>
 </body>
+<script src="../../js/login.js"></script>
 </html>

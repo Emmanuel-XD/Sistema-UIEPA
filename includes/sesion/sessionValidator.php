@@ -1,39 +1,45 @@
 <?php
-
+$error_response = "error";
+$success_response = "success";
 require_once('../db.php');
 if(isset ($_POST['login'])){
-    $user = $_POST['correo'];
-    $password =  $_POST['password']; 
-    global $conexion;
-    $query_login = "SELECT * FROM usuarios WHERE correo = '$user'";
-    $db_consult = mysqli_query($conexion, $query_login);
-    $row_num = mysqli_num_rows($db_consult);
-if($row_num){
-   
-    $fetch_result =  mysqli_fetch_assoc($db_consult);
-    $user_data = [
-        'user' => $fetch_result['correo'],
-        'password' => $fetch_result['password'],
-        'type' => $fetch_result['rol_id']
-    ];
-    if(password_verify($password, $user_data['password'])){
-    session_start();
-    $_SESSION['user']=$user_data['user'];
-    $_SESSION['type'] =$user_data['type']; 
+$user = $_POST['correo'];
+$password =  $_POST['password']; 
+global $conexion;
+$query_login = "SELECT * FROM usuarios WHERE correo = '$user'";
+$db_consult = mysqli_query($conexion, $query_login);
+$row_num = mysqli_num_rows($db_consult);
+    if($row_num){
+    
+        $fetch_result =  mysqli_fetch_assoc($db_consult);
+        $user_data = [
+            'user' => $fetch_result['correo'],
+            'password' => $fetch_result['password'],
+            'type' => $fetch_result['rol_id']
+        ];
+            if(password_verify($password, $user_data['password'])){
+            session_start();
+            $_SESSION['user']=$user_data['user'];
+            $_SESSION['type'] =$user_data['type']; 
 
-    if($_SESSION['type'] && $_SESSION['user']){
-        header('location: ../../views/index.php');
+                if($_SESSION['type'] && $_SESSION['user']){
+                    echo json_encode($success_response);
+                    /* header('location: ../../views/index.php'); */
+                }
+                else{
+                    echo json_encode($error_response);
+                    session_destroy();
+                }
+            } 
+            else{
+                echo json_encode($error_response);
+            } 
     }
-    else{
-        echo json_encode($response = ["error" => '401']);
-        session_destroy();
+    else
+    {
+        echo json_encode($error_response);
     }
-    }  
-}
-else
-{
-    echo json_encode($response = ["error" => '401']);
-}
+
 }
 ?>
 <?php 
