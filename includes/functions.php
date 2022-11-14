@@ -26,6 +26,9 @@ if (isset($_POST['accion'])){
             case 'editar_calculo';
             editar_calculo();
             break;
+            case 'get_users'; 
+            get_users();
+            break;
 
         }
 
@@ -146,6 +149,24 @@ function editar_calculo() {
          alert('Ocurrio un error inesperado');
          location.assign('../views/insumo.php');
          </script>";
+}
+
+}
+function get_users(){
+    require_once("db.php");
+    extract($_POST);
+    $consulta = "SELECT * FROM usuarios";
+    $resultado=mysqli_query($conexion, $consulta);
+
+    if (mysqli_num_rows($resultado)>0)
+    {    
+        while ($dato = mysqli_fetch_assoc($resultado) ){
+         $datos[] = $dato;
+    }
+echo json_encode($datos);
+}
+else {
+echo json_encode('error');
 }
 
 }

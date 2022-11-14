@@ -51,18 +51,15 @@ session_start();
                                         <tr>
                                             <th>Nombre</th>
                                             <th>Correo</th>
-                                            <th>Contraseña</th>
-                                            <th>Fecha</th>
+                                            <th>Creacion de cuenta</th>
                                             <th>Rol</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                    
-		
+                                    <tbody id="user_table">
                                     </tbody>
-                                </table>
-
-                                
+                                </table>                      
    <script>
   $('.btn-del').on('click', function(e){
 e.preventDefault();
@@ -124,5 +121,5 @@ Swal.fire({
 
 
 </body>
-
+<script src="../js/register.js"></script>
 </html>
