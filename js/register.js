@@ -16,15 +16,10 @@ function getUsers() {
             <td>${r.fecha}</td>
             <td>${r.rol_id}</td>
             <td>
-            <a class="btn btn-warning" href="../includes/editar_insumo.php?id=<?php echo $fila['id']?> ">
+            <a class="btn btn-warning" id="editForm">
             <i  class="fa fa-edit "></i> </a>
-            <a href="../includes/eliminar_insumo.php?id=<?php echo $fila['id']?> " class="btn btn-danger btn-del" >
+            <a class="btn btn-danger btn-del" id="deleteForm">
             <i  class="fa fa-trash "></i></a></button>
-            </td>
-            <td>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entrega<?php echo $fila['id']; ?>">
-            <i class="fa fa-archive" aria-hidden="true"></i>
-            </button>
             </td>
             </tr>
             `
@@ -34,5 +29,11 @@ function getUsers() {
     })
 
 };
+function deleteUser() {
+    var Data = new FormData()
+    Data.append('action', '')
+    
+}
 window.addEventListener('load', getUsers) 
 window.addEventListener('change', getUsers) 
+document.getElementById("deleteForm").addEventListener('click',)

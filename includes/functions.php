@@ -29,6 +29,9 @@ if (isset($_POST['accion'])){
             case 'get_users'; 
             get_users();
             break;
+            case 'delete_users';
+            delete_user();
+            break;
 
         }
 
@@ -56,7 +59,7 @@ function insertar_categoria(){
          alert('Ocurrio un error inesperado');
          location.assign('../views/insumos.php');
          </script>";
-}
+    }
 
 }
 
@@ -82,7 +85,7 @@ function insertar_datos(){
          alert('Ocurrio un error inesperado');
          location.assign('../views/insumos.php');
          </script>";
-}
+    }
 
 }
 
@@ -104,11 +107,9 @@ function editar_categoria() {
          alert('Ocurrio un error inesperado');
          location.assign('../views/categorias.php');
          </script>";
-}
+    }
 
 }
-
-
 
 function editar_datos() {
     require_once ("db.php");
@@ -163,10 +164,15 @@ function get_users(){
         while ($dato = mysqli_fetch_assoc($resultado) ){
          $datos[] = $dato;
     }
-echo json_encode($datos);
-}
-else {
-echo json_encode('error');
-}
+    echo json_encode($datos);
+    }
+    else {
+    echo json_encode('error');
+    }
 
+}
+function delete_user(){
+    require_once("db.php");
+    extract($_POST);
+    $consulta = "DELETE * FROM usuarios WHERE id = $uid" ;
 }

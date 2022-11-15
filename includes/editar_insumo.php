@@ -118,4 +118,5 @@ $usuario = mysqli_fetch_assoc($resultado);
     </form>
     
 </body>
+<?php include '../includes/footer.php'; ?>
 </html>
