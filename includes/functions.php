@@ -1,9 +1,11 @@
 <?php
-   
-
-
-
-
+if (isset($_GET['accion'])){
+    switch ($_GET['accion']){
+        case 'delete_users';
+        delete_user();
+        break;
+    }
+}
 if (isset($_POST['accion'])){ 
     switch ($_POST['accion']){
         //casos de registros
@@ -22,15 +24,14 @@ if (isset($_POST['accion'])){
             case 'editar_datos';
             editar_datos();
             break;
-
+            case 'editar_datos_usuario';
+            editar_datos_usuario();
+            break;
             case 'editar_calculo';
             editar_calculo();
             break;
             case 'get_users'; 
             get_users();
-            break;
-            case 'delete_users';
-            delete_user();
             break;
 
         }
@@ -173,6 +174,28 @@ function get_users(){
 }
 function delete_user(){
     require_once("db.php");
-    extract($_POST);
-    $consulta = "DELETE * FROM usuarios WHERE id = $uid" ;
+    extract($_GET);
+    $consulta = "DELETE FROM usuarios WHERE id = $id" ;
+    $resultado=mysqli_query($conexion, $consulta);
+    if($resultado){
+        header("location: ../views/usuarios.php");
+    }
+    else echo("error");
+   
 }
+function editar_datos_usuario(){
+    require_once("db.php");
+    extract($_POST);
+    $passwordq1 = trim($_POST['Password']);
+    $hash = password_hash($passwordq1, PASSWORD_DEFAULT, ['cost' => 5]);
+    $consulta = "UPDATE usuarios SET nombre = '$nombre', correo = '$Usuario', password = '$hash', rol_id = '$rol' WHERE id = $id ";
+    $updated = mysqli_query($conexion, $consulta);
+    if ($updated){
+        header("location: ../views/usuarios.php") ;
+    }
+    else{
+        echo "error";
+    }
+}
+
+

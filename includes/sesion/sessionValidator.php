@@ -24,7 +24,6 @@ $row_num = mysqli_num_rows($db_consult);
 
                 if($_SESSION['type'] && $_SESSION['user']){
                     echo json_encode($success_response);
-                    /* header('location: ../../views/index.php'); */
                 }
                 else{
                     echo json_encode($error_response);

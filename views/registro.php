@@ -1,4 +1,4 @@
-<?php if($_SESSION["type"] == 1){ ?>
+
 <!DOCTYPE html>
 <html lang="es-MX">
 <head>
@@ -69,8 +69,5 @@
     </form>
     
 </body>
+
 </html>
-<?php }
-else
-header("location: index.php");
-?>

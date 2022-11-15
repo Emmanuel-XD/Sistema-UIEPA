@@ -3,11 +3,6 @@ const btnSub = document.getElementById("loginForm")
 btnSub.addEventListener('submit',(function(e){
 e.preventDefault();    
     let userData = new FormData(document.forms.namedItem("loginData"))
-/*     console.log(userData);
-    var object = {};
-    userData.forEach((value, key) => object[key] = value);
-    var json = JSON.stringify(object);
-    console.log(json) */
     fetch('../sesion/sessionValidator.php',{
         method: 'POST',
         body: userData

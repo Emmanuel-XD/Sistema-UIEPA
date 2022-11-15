@@ -107,7 +107,7 @@ Swal.fire({
             <!-- End of Main Content -->
             <?php include "registro.php";?>
             
-            <?php include "../includes/footer.php";?>
+           
             
 
 
@@ -122,4 +122,5 @@ Swal.fire({
 
 </body>
 <script src="../js/register.js"></script>
+<?php include "../includes/footer.php";?>
 </html>
