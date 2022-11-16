@@ -28,7 +28,7 @@ session_start();
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <h2 class="subtitle">¡Welcome Administrator !</h2>
+                <h2 class="subtitle">Bienvenido <?php echo $_SESSION['user']?> !</h2>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -38,10 +38,6 @@ session_start();
 
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#user">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar usuario  <i class="fa fa-user-plus"></i> </a></button>
-
-                                
-                            <a href="../includes/reporte_us.php" class="btn btn-outline-danger">
-                            <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
                         </div>
                         
                         <div class="card-body">
@@ -58,15 +54,33 @@ session_start();
                                     </thead>
                                    
                                     <tbody id="user_table">
+                                        <?php 
+                                            require_once ("../includes/db.php");             
+                                            $result=mysqli_query($conexion,"SELECT * FROM usuarios ");
+                                            while ($fila = mysqli_fetch_assoc($result)):
+                                        ?>
+                                                    <tr>
+            <td id="nombre"><?php echo $fila['nombre']; ?></td>
+            <td id="correo"><?php echo $fila['username']; ?></td>
+            <td id="fecha"><?php echo $fila['fecha']; ?></td>
+            <td id="rol"><?php echo $fila['rol_id']; ?></td>
+            <td>
+            <a href="editUser.php?accion=edit_users&id=<?php echo $fila['id']?>" class="btn btn-warning" id="editForm">
+            <i class="fa fa-edit "></i> </a>
+            <a href="../includes/functions.php?accion=delete_users&id=<?php echo $fila['id'] ?> " class="btn btn-danger btn-del" id="deleteForm">
+            <i  class="fa fa-trash "></i></a></button>
+            </td>
+            </tr>
+            <?php endwhile;?>
                                     </tbody>
                                 </table>                      
-   <script>
+                                <script>
   $('.btn-del').on('click', function(e){
 e.preventDefault();
 const href = $(this).attr('href')
 
 Swal.fire({
-  title: 'Estas seguro de eliminar este usuario?',
+  title: 'Estas seguro de eliminar este registro?',
   text: "¡No podrás revertir esto!!",
   icon: 'warning',
   showCancelButton: true,
@@ -79,7 +93,7 @@ Swal.fire({
         if (result.isConfirmed) {
     Swal.fire(
       'Eliminado!',
-      'El usuario fue eliminado.',
+      'El registro fue eliminado.',
       'success'
     )
   }

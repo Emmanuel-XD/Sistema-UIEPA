@@ -9,7 +9,7 @@ include '../includes/header.php';
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-        <h1>Bienvenido  </h1> 
+        <h1>Bienvenido <?php echo $_SESSION['user']?> ! </h1> 
         <br>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">

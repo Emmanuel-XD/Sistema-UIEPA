@@ -43,7 +43,7 @@ function edit_user()
 
                             <div class="form-group">
                             <label for="nombre" class="form-label">Usuario *</label>
-                            <input type="text"  id="Usuario" name="Usuario" class="form-control" value="<?php echo $usuarios ['correo']; ?>" required>
+                            <input type="text"  id="username" name="username" class="form-control" value="<?php echo $usuarios ['username']; ?>" required>
                             </div>
 
                             <div class="form-group">

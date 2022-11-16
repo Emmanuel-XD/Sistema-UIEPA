@@ -188,7 +188,7 @@ function editar_datos_usuario(){
     extract($_POST);
     $passwordq1 = trim($_POST['Password']);
     $hash = password_hash($passwordq1, PASSWORD_DEFAULT, ['cost' => 5]);
-    $consulta = "UPDATE usuarios SET nombre = '$nombre', correo = '$Usuario', password = '$hash', rol_id = '$rol' WHERE id = $id ";
+    $consulta = "UPDATE usuarios SET nombre = '$nombre', username = '$username', password = '$hash', rol_id = '$rol' WHERE id = $id ";
     $updated = mysqli_query($conexion, $consulta);
     if ($updated){
         header("location: ../views/usuarios.php") ;

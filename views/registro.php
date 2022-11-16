@@ -29,8 +29,8 @@
                             <input type="text"  id="nombre" name="nombre" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label for="username">Correo:</label><br>
-                                <input type="email" name="correo" id="correo" class="form-control" placeholder="No se puede repetir con alguno de la lista...">
+                                <label for="username">Usuario unico:</label><br>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="No se puede repetir con alguno de la lista...">
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="conf_password">Confirmar contraseña:</label><br>
-                                <input type="conf_password" name="conf_password" id="conf_password" class="form-control" required>
+                                <input type="password" name="conf_password" id="conf_password" class="form-control" required>
                             </div>
 
                             <div class="form-group">

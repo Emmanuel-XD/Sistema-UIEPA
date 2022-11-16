@@ -24,8 +24,8 @@
                             <div id="alert">
                             </div>
                             <div class="form-group">
-                                <label for="username">Correo:</label><br>
-                                <input type="text" name="correo" id="correo" class="form-control" required>
+                                <label for="username">Usuario:</label><br>
+                                <input type="text" name="username" id="username" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña:</label><br>
