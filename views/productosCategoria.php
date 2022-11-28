@@ -39,8 +39,8 @@ session_start();
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar insumos <i class="fa fa-plus" aria-hidden="true"></i>   </a></button>
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
-				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias <i class="fa fa-tag" aria-hidden="true"></i></a></button>
+                           <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
+				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias <i class="fa fa-tag" aria-hidden="true"></i></a></button>-->
                             <?php }
 ?>
                      

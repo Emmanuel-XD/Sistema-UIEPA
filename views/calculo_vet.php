@@ -35,7 +35,7 @@
                             <div class="form-group">
                             <label for="nombre" class="form-label">Entregando: *</label>
                             <input type="number"  id="entregado" name="entregado" class="form-control"  required>
-                            <input type="hidden" name="accion" value="editar_calculo">
+                            <input type="hidden" name="accion" value="calculo_vet">
                             <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">   
                         </div>
                             
@@ -44,7 +44,7 @@
                                 <div class="mb-3">
                                     
                                <input type="submit" value="Guardar" id="register" class="btn btn-success">
-                               <a href="insumos.php" class="btn btn-danger">Cancelar</a>
+                               <a href="veterinaria.php?categoria=VETERINARIA" class="btn btn-danger">Cancelar</a>
                                
                             </div>
                             </div>
