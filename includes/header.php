@@ -227,7 +227,7 @@ if($usuario == null && $permiso == null){
                                 <p style="
                                             margin-top: 20px;
                                             color: beige;
-                                        "> <?php echo $_SESSION['user']?></p>
+                                        "></p>
                          
                         </li>
 

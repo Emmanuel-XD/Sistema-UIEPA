@@ -2,6 +2,7 @@
 // Seguridad de sesiones
 
 
+require_once ("../includes/db.php");
 
 include '../includes/header.php';
 
@@ -27,14 +28,21 @@ include '../includes/header.php';
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <a href="citas.php" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Numero </a>
+                        <a href="#" class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Usuarios</a>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                           
+                        <?php 
+
+    
+$SQL="SELECT id FROM usuarios ORDER BY id";
+$dato = mysqli_query($conexion, $SQL);
+$fila= mysqli_num_rows($dato);
+
+echo($fila); ?>
                             </div>
                     </div>
                     <div class="col-auto">
-                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -47,14 +55,21 @@ include '../includes/header.php';
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <a href="pacientes.php" class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Numero </a>
+                        <a href="#" class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                           Insumos </a>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    
+                        <?php 
+
+    
+$SQL="SELECT id FROM insumo ORDER BY id";
+$dato = mysqli_query($conexion, $SQL);
+$fila= mysqli_num_rows($dato);
+
+echo($fila); ?>
                         </div>
                     </div>
                     <div class="col-auto">
-                    <i class="fa-solid fa fa-male fa-2x text-gray-300" aria-hidden="true"></i>
+   
              
                       
                     </div>
@@ -69,12 +84,19 @@ include '../includes/header.php';
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <a href="medicos.php" class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                            Numero </a>
+                        <a href="#" class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Categorias </a>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                             
+                                <?php 
+
+    
+$SQL="SELECT id FROM categorias ORDER BY id";
+$dato = mysqli_query($conexion, $SQL);
+$fila= mysqli_num_rows($dato);
+
+echo($fila); ?>
 
                                 </div>
                             </div>
@@ -82,7 +104,7 @@ include '../includes/header.php';
                         </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fa fa-user-md fa-2x text-gray-300" aria-hidden="true"></i></i>
+
                     </div>
                 </div>
             </div>
@@ -96,13 +118,20 @@ include '../includes/header.php';
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                           Numero de Usuarios</div>
+                          Roles</div>
                         <div class="h5 mb-0 font-weight-bold text-gray-800">
-                       
+                        <?php 
+
+    
+$SQL="SELECT id FROM permisos ORDER BY id";
+$dato = mysqli_query($conexion, $SQL);
+$fila= mysqli_num_rows($dato);
+
+echo($fila); ?>
                         </div>
                     </div>
                     <div class="col-auto">
-                    <i class="fa fa-users fa-2x text-gray-300"></i>
+
                     </div>
                 </div>
             </div>

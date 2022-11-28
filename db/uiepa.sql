@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 03:42 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 20-11-2022 a las 22:51:21
+-- Versión del servidor: 10.4.20-MariaDB
+-- Versión de PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `uiepa`
+-- Base de datos: `uiepa`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorias`
+-- Estructura de tabla para la tabla `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +34,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `categorias`
+-- Volcado de datos para la tabla `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `nombre`, `fecha`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `categorias` (`id`, `nombre`, `fecha`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `insumo`
+-- Estructura de tabla para la tabla `insumo`
 --
 
 CREATE TABLE `insumo` (
@@ -64,19 +64,19 @@ CREATE TABLE `insumo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `insumo`
+-- Volcado de datos para la tabla `insumo`
 --
 
 INSERT INTO `insumo` (`id`, `fecha_entrada`, `cantidad`, `unidad`, `nombre`, `fecha_caducidad`, `marca`, `existencia`, `categoria`, `entregado`) VALUES
-(1, '2022-11-11', 100, 'PZA', 'usuario', '2022-11-26', 'Prueba', '10', 'GASTRONOMIA', 0),
-(3, '2022-11-17', 100, 'PZAss', 'Isnumo', '2022-11-24', 'Prueba', '10', 'VETERINARIA', 0),
-(4, '2022-11-15', 200, 'PZA', 'Material', '2022-12-01', 'FERMONT', '10', 'VETERINARIA', 0),
-(8, '2022-11-13', 1, 'Litros', 'test', '2022-12-07', 'a2', '10', 'ENFERMERIA', 1);
+(1, '2022-11-11', 100, 'PZA', 'usuario', '2022-11-26', 'Prueba', '0', 'GASTRONOMIA', 10),
+(3, '2022-11-17', 100, 'PZAss', 'Isnumo', '2022-11-24', 'Prueba', '5', 'VETERINARIA', 5),
+(4, '2022-11-15', 200, 'PZA', 'Material', '2022-12-01', 'FERMONT', '5', 'VETERINARIA', 5),
+(8, '2022-11-13', 1, 'Litros', 'test', '2022-12-07', 'a2', '5', 'ENFERMERIA', 5);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permisos`
+-- Estructura de tabla para la tabla `permisos`
 --
 
 CREATE TABLE `permisos` (
@@ -85,7 +85,7 @@ CREATE TABLE `permisos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `permisos`
+-- Volcado de datos para la tabla `permisos`
 --
 
 INSERT INTO `permisos` (`id`, `rol`) VALUES
@@ -95,7 +95,7 @@ INSERT INTO `permisos` (`id`, `rol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -108,37 +108,38 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nombre`, `username`, `password`, `fecha`, `rol_id`) VALUES
-(17, 'prueba', '32fe', '$2y$05$zPPpyccxeYxQVj4fqgSE0OvfIYhD1ndon.P3vdmBxJmQfCZ7mJ1fe', '2022-11-16 02:35:37', 1),
-(24, 'Fernando', 'fer231', '$2y$05$Y5HdWNQxjz5Bg3lbSOblku7fAV7PxJ7TUore9jXz7fUM5tgv2bXKq', '2022-11-16 02:23:53', 1);
+(26, 'Emanuel', 'Emanuel', '$2y$05$HS5IA8LOcQDTnlgvb7ojGeMBlAb7NGtW33MNXjL2llPoacPBIIMEW', '2022-11-16 06:11:26', 1),
+(28, 'prueba', 'prueba', '$2y$05$eL3KnZJ65hzAYVmZR.8efeTsf2w8GWUEe4XAsa9NpVujCbeuuABc.', '2022-11-16 22:46:30', 2),
+(29, 'usuario', 'usuario', '$2y$05$m0O4XSo4Ik1GJktnOSp6punWXhTVuZt86Ri6xbaOCwppAbUxypXmW', '2022-11-16 23:01:39', 2);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `categorias`
+-- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `insumo`
+-- Indices de la tabla `insumo`
 --
 ALTER TABLE `insumo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `permisos`
+-- Indices de la tabla `permisos`
 --
 ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
@@ -146,39 +147,39 @@ ALTER TABLE `usuarios`
   ADD KEY `permisos` (`rol_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `insumo`
+-- AUTO_INCREMENT de la tabla `insumo`
 --
 ALTER TABLE `insumo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `permisos`
+-- AUTO_INCREMENT de la tabla `permisos`
 --
 ALTER TABLE `permisos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `usuarios`
+-- Filtros para la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `permisos` FOREIGN KEY (`rol_id`) REFERENCES `permisos` (`id`);

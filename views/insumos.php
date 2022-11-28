@@ -35,7 +35,7 @@ session_start();
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Datos Generales</h6>
                             <br>
-
+                            <?php if($_SESSION["type"] == 1){ ?>
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar insumos <i class="fa fa-plus" aria-hidden="true"></i>  </a></button>
 
@@ -44,6 +44,8 @@ session_start();
                                 
                             <a href="../includes/reporte.php" class="btn btn-outline-danger">
                             <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
+                            <?php }
+?>
 
                             <label for="cat" class="form-label"></label>
                             <select name="select" id="select" class="control" required>
@@ -81,8 +83,11 @@ session_start();
                                             <th>Marca</th>
                                             <th>Existencia</th>
                                             <th>Categoria</th>
+                                            <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones...</th>
                                             <th>Entregar</th>
+                                            <?php }
+?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -123,7 +128,7 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <td><?php echo $fila['marca']; ?></td>
 <td><?php echo $fila['existencia'];?></td>
 <td><?php echo $fila['categoria']; ?></td>
-
+<?php if($_SESSION["type"] == 1){ ?>
 <td>
 <a class="btn btn-warning" href="../includes/editar_insumo.php?id=<?php echo $fila['id']?> ">
 <i  class="fa fa-edit "></i> </a>
@@ -135,6 +140,8 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <i class="fa fa-archive" aria-hidden="true"></i>
 </button>
 </td>
+<?php }
+?>
 </tr>
 <?php  include "editar.php"; ?>
 

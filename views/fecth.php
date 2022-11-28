@@ -1,3 +1,12 @@
+<?php 
+session_start();
+$usuario = $_SESSION['user'];
+$permiso = $_SESSION['type'];
+if($usuario == null && $permiso == null){
+    header ("location: ../includes/sesion/login.php");
+   
+}
+?>
 
 <?php
 include "../includes/db.php";
@@ -32,8 +41,12 @@ if(isset($_POST['request'])){
                                             <th>Marca</th>
                                             <th>Existencia</th>
                                             <th>Categoria</th>
+                                            <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones..</th>
                                             <th>Entregar</th>
+                                            <?php }
+?>
+         
                                         </tr>
                                     </thead>
                             
@@ -77,7 +90,7 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <td><?php echo $fila['existencia']; ?></td>
 <td><?php echo $fila['categoria']; ?></td>
 
-
+<?php if($_SESSION["type"] == 1){ ?>
 <td>
 <a class="btn btn-warning" href="../includes/editar_insumo.php?id=<?php echo $fila['id']?> ">
 <i  class="fa fa-edit "></i> </a>
@@ -90,7 +103,9 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 </button>
 <?php  include "editar.php"; ?>
 </td>
-
+<?php }
+?>
+         
 </tr>
 
 

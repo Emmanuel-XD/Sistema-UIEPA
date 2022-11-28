@@ -46,7 +46,7 @@ session_start();
                                     <thead>
                                         <tr>
                                             <th>Nombre</th>
-                                            <th>Correo</th>
+                                            <th>Usuario</th>
                                             <th>Creacion de cuenta</th>
                                             <th>Rol</th>
                                             <th>Acciones</th>
