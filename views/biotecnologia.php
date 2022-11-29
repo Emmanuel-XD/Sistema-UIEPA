@@ -57,7 +57,6 @@ session_start();
                                             <th>Fecha Caducidad</th>
                                             <th>Marca</th>
                                             <th>Existencia</th>
-                                            <th>Categoria</th>
                                             <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones..</th>
                                             <th>Entregar</th>
@@ -106,7 +105,6 @@ if ($fila['existencia'] <= $fila['cantidad']) {
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
 <td><?php echo $fila['existencia']; ?></td>
-<td><?php echo $fila['categoria'] ; ?></td>
 <?php if($_SESSION["type"] == 1){ ?>
 <td>
 <a class="btn btn-warning" href="../includes/editar_bio.php?id=<?php echo $fila['id']?> ">
