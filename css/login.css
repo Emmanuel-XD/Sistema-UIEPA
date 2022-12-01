@@ -65,3 +65,13 @@
 	padding:70px 0px 70px 0px;
 	margin: 20px;
   }
+  .master {
+	min-height: 100%;
+  }
+  @media only screen 
+and (min-device-width : 0px) 
+and (max-device-width : 500px) 	{
+	#loginForm{
+		padding: 0px 0px;
+	}
+}

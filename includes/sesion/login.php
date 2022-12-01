@@ -10,12 +10,12 @@
 </head>
 <body class="body-login">
 <div class="container form-controller">
-    <div class="row align-items-center">
-    <div class="col-sm-6 div1 d-none d-sm-none d-md-block">
+    <div class="row align-items-center master">
+    <div class="col-lg-6 div1 d-none d-sm-none d-md-none d-lg-block">
         <img class="logo-img" src="../../img/LOGO UIEPA.png" alt="">
         <p class="logo-img">Sistema De Inventario Para Área De Practica</p>
     </div>
-    <div class="col-sm-6 div2">
+    <div class="col-lg-6 col-sm-12 div2">
         <form  id="loginForm" name="loginData">
             <div id="login" >
                     <div class="container">
