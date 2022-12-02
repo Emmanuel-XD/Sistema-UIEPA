@@ -6,7 +6,7 @@ error_reporting(0);
 $varsesion = $_SESSION['nombre'];
 
 require('../../fpdf/fpdf.php');
-
+include "../fecha.php";
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -24,7 +24,11 @@ function Header()
     // Título
     $this->Cell(70,10,'REPORTE DE VETERINARIA' ,0,0,'C');
     // Salto de línea
-   
+    $this->SetFont('Arial','B',10);
+    $this->Ln(10);
+    $this->SetX(110);
+    $this->Cell(70,10,'Fecha de impresion: ' .utf8_decode(fecha()) ,0,0,'C');
+    
     $this->Ln(30);
     $this->SetFont('Arial','B',10);
     $this->SetX(17);

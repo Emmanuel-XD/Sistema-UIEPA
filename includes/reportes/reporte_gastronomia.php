@@ -6,7 +6,7 @@ error_reporting(0);
 $varsesion = $_SESSION['nombre'];
 
 require('../../fpdf/fpdf.php');
-
+include "../fecha.php";
 class PDF extends FPDF
 {
 // Cabecera de página
@@ -14,6 +14,8 @@ function Header()
 {
     
     //$this->image('', 150, 1, 40); // X, Y, Tamaño
+
+
     $this->Ln(20);
     // Arial bold 15
     $this->SetFont('Arial','B',20);
@@ -24,7 +26,11 @@ function Header()
     // Título
     $this->Cell(70,10,'REPORTE DE GASTRONOMIA' ,0,0,'C');
     // Salto de línea
-   
+    $this->SetFont('Arial','B',10);
+    $this->Ln(10);
+    $this->SetX(110);
+    $this->Cell(70,10,'Fecha de impresion: ' .utf8_decode(fecha()) ,0,0,'C');
+
     $this->Ln(30);
     $this->SetFont('Arial','B',10);
     $this->SetX(17);
@@ -38,6 +44,7 @@ function Header()
 
   
 }
+
 
 // Pie de página
 function Footer()
@@ -84,8 +91,8 @@ foreach($resultado as $key => $row ){
 
 
 } 
-}
 
+}
 
 	$pdf->Output();
 ?>
