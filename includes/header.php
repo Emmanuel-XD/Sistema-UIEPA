@@ -192,8 +192,13 @@ if($usuario == null && $permiso == null){
                             </div>
                         </div>
                     </form>
-                   
-
+                    <?php include "fecha.php";?>
+                    <p class="s"></strong><?php echo fecha(); ?></p>
+<style>
+    .s{
+        color: white;
+    }
+</style>
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
 
