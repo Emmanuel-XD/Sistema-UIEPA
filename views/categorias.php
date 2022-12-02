@@ -7,27 +7,27 @@
 <body>
     <center>
     <div class="row">
-        <div class="col-sm-4">
+        <div class="col-sm-4  justify-content-center">
 <a class="ENFERMERIA" href="enfermeria.php?categoria=<?php echo 'ENFERMERIA'?>">
-<img src="../img/enfer.png" width="130px" height="120px" alt="">
+<img class="img-style"  src="../img/enfer.png" width="130px" height="120px" alt="">
 ENFERMERIA
 </a>
 <a class="pdf" href="../includes/reportes/reporte_enfermeria.php?categoria=<?php echo'ENFERMERIA'?>">
 VER PDF- ENFERMERIA
 </a>
         </div>
-<div class="col-sm-4">
+<div class="col-sm-4 adjuster justify-content-center">
 <a class="GASTRONOMIA" href="gastronomia.php?categoria=<?php echo 'GASTRONOMIA'?>">
-<img src="../img/gastronomia.jpg" width="130px" height="120px" alt="">
+<img class="img-style" src="../img/gastronomia.jpg" width="130px" height="120px" alt="">
 GASTRONOMIA
 </a>
 <a class="pdf" href="../includes/reportes/reporte_gastronomia.php?categoria=<?php echo'GASTRONOMIA'?>">
 VER PDF - GASTRONOMIA
 </a>
 </div>  
-<div class="col-sm-4">
+<div class="col-sm-4 adjuster justify-content-center">
 <a class="AGROINDUSTRIAL" href="agroindustrial.php?categoria=<?php echo 'AGROINDUSTRIAL' ?>">
-<img src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
+<img  class="img-style" src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
 AGROINDUSTRIAL
 </a>
 <a class="pdf" href="../includes/reportes/reporte_agroindustrial.php?categoria=<?php echo'AGROINDUSTRIAL'?>">
@@ -37,9 +37,9 @@ VER PDF - AGROINDUSTRIAL
 </div>
 
 <div class="row">
-<div class="col-sm-4">
+<div class="col-sm-4 adjuster justify-content-center">
 <a class="BIOTECNOLOGIA" href="biotecnologia.php?categoria=<?php echo 'BIOTECNOLOGIA'?>">
-<img src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
+<img class="img-style" src="../img/agroindustrial.jpg" width="130px" height="120px" alt="">
 BIOTECNOLOGIA
 </a>
 <a class="pdf" href="../includes/reportes/reporte_biotecnologia.php?categoria=<?php echo'BIOTECNOLOGIA'?>">
@@ -47,9 +47,9 @@ VER PDF - BIOTECNOLOGIA
 </a>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 adjuster justify-content-center">
 <a class="VETERINARIA" href="veterinaria.php?categoria=<?php echo'VETERINARIA'?>">
-<img src="../img/veterinaria.webp" width="130px" height="120px" alt="">
+<img  class="img-style" src="../img/veterinaria.webp" width="130px" height="120px" alt="">
 VETERINARIA
 </a>
 <a class="pdf" href="../includes/reportes/reporte_veterinaria.php?categoria=<?php echo'VETERINARIA'?>">

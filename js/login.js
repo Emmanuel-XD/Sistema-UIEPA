@@ -10,7 +10,7 @@ e.preventDefault();
     }).then((res) => res.json()).then((response) => {
         console.log();
         if(response === "success"){
-            window.location.replace("../../views/index.php")
+            window.location.replace("../../views/categorias.php")
         }
         if(response === "error"){
              var valHtml = `<div class="alert alert-danger" role="alert">Hay un error con tu correo o contraseña intenta de nuevo</div>`;

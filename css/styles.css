@@ -1,3 +1,10 @@
+.img-style{
+    border-radius: 16%;
+    border-color: #7f8bb9;
+    border-width: 10px;
+    width: 100%;
+}
+
 .control {
  
     /* width: 100%; */

@@ -79,12 +79,12 @@ foreach($productos as $key => $fila ){
 ?>
 <?php
 
-if ($fila['cantidad'] <= $fila['existencia']) {
-  $color = '#F78E8E';
-  $clase = 'problema';
-} else {
-  $clase = 'correcto';
-}
+if ($fila['existencia'] < 10) {
+    $color = '#F78E8E';
+    $clase = 'problema';
+  } else {
+    $clase = 'correcto';
+  }
  
 // ...
 
@@ -99,12 +99,12 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <tr>
 <td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
-<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['cantidad']; ?></td>
+<td ><?php echo $fila['cantidad']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
-<td><?php echo $fila['existencia']; ?></td>
+<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['existencia']; ?></td>
 <?php if($_SESSION["type"] == 1){ ?>
 <td>
 <a class="btn btn-warning" href="../includes/editar_vet.php?id=<?php echo $fila['id']?> ">
