@@ -39,8 +39,6 @@ session_start();
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
 				            <span class="glyphicon glyphicon-plus"></span> Agregar insumos <i class="fa fa-plus" aria-hidden="true"></i>  </a></button>
 
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoria">
-				            <span class="glyphicon glyphicon-plus"></span> Agregar categorias <i class="fa fa-tag" aria-hidden="true"></i></a></button>
                                 
                             <a href="../includes/reporte.php" class="btn btn-outline-danger">
                             <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
@@ -82,10 +80,10 @@ session_start();
                                             <th>Fecha Caducidad</th>
                                             <th>Marca</th>
                                             <th>Existencia</th>
-                                            <th>Categoria</th>
+                                            <th>Categorias</th>
                                             <?php if($_SESSION["type"] == 1){ ?>
-                                            <th>Acciones...</th>
-                                            <th>Entregar</th>
+                                            <th>Acciones..</th>
+                                        
                                             <?php }
 ?>
                                         </tr>
@@ -94,15 +92,15 @@ session_start();
 		
                                     <?php
 
-require_once ("../includes/db.php");             
-$result=mysqli_query($conexion,"SELECT * FROM insumo ");
-while ($fila = mysqli_fetch_assoc($result)):
-    
+require_once ("../includes/db.php");  $sql = "SELECT * FROM insumo ";
+$productos = mysqli_query($conexion, $sql);
+if($productos -> num_rows > 0){
+foreach($productos as $key => $fila ){
 ?>
 
 <?php
 
-if ($fila['cantidad'] <= $fila['existencia']) {
+if ($fila['existencia'] < 10) {
   $color = '#F78E8E';
   $clase = 'problema';
 } else {
@@ -126,7 +124,7 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
-<td><?php echo $fila['existencia'];?></td>
+<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['existencia']; ?></td>
 <td><?php echo $fila['categoria']; ?></td>
 <?php if($_SESSION["type"] == 1){ ?>
 <td>
@@ -145,7 +143,8 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 </tr>
 <?php  include "editar.php"; ?>
 
-<?php endwhile;?>
+<?php }
+}?>
                                     </tbody>
                                 </table>
 

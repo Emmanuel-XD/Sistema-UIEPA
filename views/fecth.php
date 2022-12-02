@@ -63,7 +63,7 @@ if(isset($_POST['request'])){
         
 <?php
 
-if ($fila['cantidad'] <= $fila['existencia']) {
+if ($fila['existencia'] < 10) {
   $color = '#F78E8E';
   $clase = 'problema';
 } else {
@@ -87,7 +87,7 @@ if ($fila['cantidad'] <= $fila['existencia']) {
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
-<td><?php echo $fila['existencia']; ?></td>
+<td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['existencia']; ?></td>
 <td><?php echo $fila['categoria']; ?></td>
 
 <?php if($_SESSION["type"] == 1){ ?>
