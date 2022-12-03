@@ -19,7 +19,7 @@ if(isset($_POST['request'])){
     $count = mysqli_num_rows($resultado);
 }
 ?>
-    <script src="../js/bootstrap.min.js"></script>
+
 <script src="../js/jquery.min.js"></script>
 
 <div class="card-body">
@@ -69,6 +69,7 @@ if ($fila['existencia'] < 10) {
 } else {
   $clase = 'correcto';
 }
+
  
 // ...
 
@@ -79,19 +80,18 @@ if ($fila['existencia'] < 10) {
         color: #000000;
     }
 </style>
-        <tr>
+<tr>
 <td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
-<td><?php echo $fila['cantidad']; ?></td>
+<td ><?php echo $fila['cantidad']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
 <td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['existencia']; ?></td>
 <td><?php echo $fila['categoria']; ?></td>
-
 <?php if($_SESSION["type"] == 1){ ?>
-<td>
+    <td>
 <a class="btn btn-warning" href="../includes/editar_insumo.php?id=<?php echo $fila['id']?> ">
 <i  class="fa fa-edit "></i> </a>
 <a href="../includes/eliminar_insumo.php?id=<?php echo $fila['id']?> " class="btn btn-danger btn-del" >
@@ -101,20 +101,17 @@ if ($fila['existencia'] < 10) {
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#entrega<?php echo $fila['id']; ?>">
 <i class="fa fa-archive" aria-hidden="true"></i>
 </button>
-<?php  include "editar.php"; ?>
 </td>
 <?php }
 ?>
-         
+          
 </tr>
+<?php  include "editar.php"; ?>
 
 
-<?php
-
-    }
-    ?>
-  </tbody>
-    </table>
+<?php }
+?>
+                    </table>
                   
 <script>
   $('.btn-del').on('click', function(e){
@@ -146,9 +143,20 @@ Swal.fire({
 
     })
 </script>
-<script src="../package/dist/sweetalert2.all.js"></script>
-<script src="../package/dist/sweetalert2.all.min.js"></script>
-<script src="../package/jquery-3.6.0.min.js"></script>
+
+</div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            </div>
+        <!-- End of Content Wrapper -->
+        <?php include "../includes/footer.php";?>
+
+    </div>
+    <!-- End of Page Wrapper -->
 
 
-<?php include "../includes/footer.php";?>

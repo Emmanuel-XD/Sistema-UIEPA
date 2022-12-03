@@ -14,7 +14,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <script src="../js/bootstrap.min.js"></script>
+
     <script src="../js/jquery.min.js"></script>
 
 </head>
@@ -33,7 +33,7 @@ session_start();
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Datos Generales</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">Datos Generales</h6>
                             <br>
                             <?php if($_SESSION["type"] == 1){ ?>
                             <button type="button" class="btn btn-success" data-toggle="modal" data-target="#datos">
@@ -44,8 +44,7 @@ session_start();
                             <i class="fa fa-file" aria-hidden="true"></i>  Generar Reporte PDF</a>
                             <?php }
 ?>
-
-                            <label for="cat" class="form-label"></label>
+                      <label for="cat" class="form-label"></label>
                             <select name="select" id="select" class="control" required>
                             <option value="0" >--Ver por categoria--</option>
  
@@ -61,9 +60,7 @@ session_start();
 
                                    ?>
                               </select>
-                        </div>
-                      
-                        
+                              </div>
                         <div class="card-body">
                         <div class="class">
                             <div class="table-responsive">
@@ -82,29 +79,30 @@ session_start();
                                             <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones..</th>
                                             <th>Entregar</th>
-                                          
                                             <?php }
 ?>
+          
                                         </tr>
                                     </thead>
-                                    <tbody>
-		
+                                   
+
+                                    </tbody>
                                     <?php
 
-require_once ("../includes/db.php");  $sql = "SELECT * FROM insumo ";
+require_once ("../includes/db.php");   
+$sql = "SELECT * FROM insumo ";
 $productos = mysqli_query($conexion, $sql);
 if($productos -> num_rows > 0){
 foreach($productos as $key => $fila ){
 ?>
-
 <?php
 
 if ($fila['existencia'] < 10) {
-  $color = '#F78E8E';
-  $clase = 'problema';
-} else {
-  $clase = 'correcto';
-}
+    $color = '#F78E8E';
+    $clase = 'problema';
+  } else {
+    $clase = 'correcto';
+  }
  
 // ...
 
@@ -115,10 +113,11 @@ if ($fila['existencia'] < 10) {
         color: #000000;
     }
 </style>
+
 <tr>
 <td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
-<td><?php echo $fila['cantidad']; ?></td>
+<td ><?php echo $fila['cantidad']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
@@ -126,7 +125,7 @@ if ($fila['existencia'] < 10) {
 <td <?php echo  'class="'.$clase .'"'; ?>><?php echo $fila['existencia']; ?></td>
 <td><?php echo $fila['categoria']; ?></td>
 <?php if($_SESSION["type"] == 1){ ?>
-<td>
+    <td>
 <a class="btn btn-warning" href="../includes/editar_insumo.php?id=<?php echo $fila['id']?> ">
 <i  class="fa fa-edit "></i> </a>
 <a href="../includes/eliminar_insumo.php?id=<?php echo $fila['id']?> " class="btn btn-danger btn-del" >
@@ -137,16 +136,16 @@ if ($fila['existencia'] < 10) {
 <i class="fa fa-archive" aria-hidden="true"></i>
 </button>
 </td>
-
-
 <?php }
 ?>
+          
 </tr>
 <?php  include "editar.php"; ?>
 
+
 <?php }
 }?>
-                          </table>
+                    </table>
 
                                 
    <script>
@@ -194,7 +193,7 @@ Swal.fire({
 
             </div>
             <!-- End of Main Content -->
-           
+            
             <?php include "form_categoria.php";?>
             
             <?php include "../includes/footer.php";?>
@@ -206,9 +205,8 @@ Swal.fire({
 
     </div>
     <!-- End of Page Wrapper -->
-
     </div>
-
+ 
 
     <script type="text/javascript">
     $(document).ready(function(){
@@ -231,6 +229,7 @@ Swal.fire({
         });
     });
 </script>
+
 
 </body>
 
