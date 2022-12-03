@@ -62,9 +62,7 @@ session_start();
                                    ?>
                               </select>
                         </div>
-                        <style>
-
-                        </style>
+                      
                         
                         <div class="card-body">
                         <div class="class">
@@ -83,7 +81,8 @@ session_start();
                                             <th>Categorias</th>
                                             <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones..</th>
-                                        
+                                            <th>Entregar</th>
+                                          
                                             <?php }
 ?>
                                         </tr>
@@ -138,6 +137,8 @@ if ($fila['existencia'] < 10) {
 <i class="fa fa-archive" aria-hidden="true"></i>
 </button>
 </td>
+
+
 <?php }
 ?>
 </tr>
@@ -145,8 +146,7 @@ if ($fila['existencia'] < 10) {
 
 <?php }
 }?>
-                                    </tbody>
-                                </table>
+                          </table>
 
                                 
    <script>
