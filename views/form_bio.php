@@ -64,41 +64,65 @@
                                </div>
                                    </div>
 
+                            <div class="col-sm-6">
+                              <div class="mb-3">
+                                  <label for="rol" class="form-label">Tipo</label>
+                                  <select name="tipo" id="tipo" class="form-control" required>
+                                  <option value="">--Selecciona una opcion--</option>
+                                  <option value="Reactivos">Reactivos</option>
+                                  <option value="Farmacos">Farmacos</option>
+                                  <option value="Insumos">Insumos</option>
+                                  <option value="Consumibles medicos">Consumibles medicos</option>
+                                  <option value="Consumibles laboratorio">Consumibles laboratorio</option>
+                                  <option value="Consumibles cocina">Consumibles cocina</option>
+                            
+                               </select>
+                               </div>
+                                   </div>
+                                   </div>
+
+                                   <div class="row">
                         <div class="col-sm-6">
                        <div class="mb-3">
                         <label for="descripcion" class="form-label">Reactivo/Insumo </label>
                         <input type="text"  id="nombre" name="nombre" class="form-control">
                             </div>
                                 </div>
-                              </div>
+                             
 
-                              <div class="row">
+                            
                             <div class="col-sm-6">
                               <div class="mb-3">
                              <label for="nombre" class="form-label">Fecha Caducidad:</label>
                              <input type="date"  id="fecha_caducidad" name="fecha_caducidad" class="form-control">
                                     </div>
                                    </div>
-
+                                   </div>
+                                   
+                                   <div class="row">
                         <div class="col-sm-6">
                        <div class="mb-3">
                         <label for="descripcion" class="form-label">Marca</label>
                         <input type="text"  id="marca" name="marca" class="form-control">
                             </div>
                                 </div>
-                              </div>
+                              
 
                             
-
-                            <div class="form-group">
+   
+                            <div class="col-sm-6">
+                              <div class="mb-3">
                             <label for="nombre" class="form-label">Existencia *</label>
                             <input type="number"  id="existencia" name="existencia" class="form-control" required>
                             </div>
+                            </div>
+                            </div>
+
 
                             <div class="form-group ">
 								<label>Categoria:</label>
 								<select class="form-control" id="categoria" name="categoria" required >
-                                <option value=""><--Selecciona una opcion--></option>
+                         
                                 <option value="BIOTECNOLOGIA">BIOTECNOLOGIA</option>
 
 								</select>
