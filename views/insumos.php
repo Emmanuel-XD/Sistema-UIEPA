@@ -70,6 +70,7 @@ session_start();
                                             <th>Codigo</th>
                                             <th>Fecha Entrada</th>
                                             <th>Cantidad</th>
+                                            <th>Tipo</th>
                                             <th>Unidad/Medida</th>
                                             <th>Reactivo/Insumo</th>
                                             <th>Fecha Caducidad</th>
@@ -79,6 +80,7 @@ session_start();
                                             <?php if($_SESSION["type"] == 1){ ?>
                                             <th>Acciones..</th>
                                             <th>Entregar</th>
+                                            <th>Recibir</th>
                                             <?php }
 ?>
           
@@ -118,6 +120,7 @@ if ($fila['existencia'] < 10) {
 <td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
 <td ><?php echo $fila['cantidad']; ?></td>
+<td ><?php echo $fila['tipo']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
@@ -136,12 +139,17 @@ if ($fila['existencia'] < 10) {
 <i class="fa fa-archive" aria-hidden="true"></i>
 </button>
 </td>
+<td>
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#recibir<?php echo $fila['id']; ?>">
+<i class="fa fa-plus-square" aria-hidden="true"></i>
+</button>
+</td>
 <?php }
 ?>
           
 </tr>
 <?php  include "editar.php"; ?>
-
+<?php  include "recibir.php"; ?>
 
 <?php }
 }?>
