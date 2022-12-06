@@ -82,6 +82,24 @@ if (isset($_POST['accion'])){
             case 'calculo_vet';
             calculo_vet();
             break;
+            case 'editar_recibo';
+            editar_recibo();
+            break;
+            case 'recibo_enfer';
+            recibo_enfer();
+            break;
+            case 'recibo_gastro';
+            recibo_gastro();
+            break;
+            case 'recibo_agro';
+            recibo_agro();
+            break;
+            case 'recibo_bio';
+            recibo_bio();
+            break;
+            case 'recibo_vet';
+            recibo_vet();
+            break;
             case 'get_users'; 
             get_users();
             break;
@@ -122,9 +140,9 @@ function insertar_datos(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -148,9 +166,9 @@ function insertar_enfer(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -174,9 +192,9 @@ function insertar_gastro(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo',  '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -200,9 +218,9 @@ function insertar_agro(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo',  '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -226,9 +244,9 @@ function insertar_bio(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -252,9 +270,9 @@ function insertar_vet(){
     extract($_POST);
     include "db.php";
 
-    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, unidad, nombre, fecha_caducidad, marca,
+    $consulta="INSERT INTO insumo (fecha_entrada, cantidad, tipo, unidad, nombre, fecha_caducidad, marca,
     existencia, categoria)
-    VALUES ('$fecha_entrada', '$cantidad', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
+    VALUES ('$fecha_entrada', '$cantidad', '$tipo', '$unidad', '$nombre', '$fecha_caducidad', '$marca', '$existencia', '$categoria' );" ;
     $resultado=mysqli_query($conexion, $consulta);
 
     if($resultado){
@@ -299,7 +317,7 @@ function editar_datos() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+    tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -322,7 +340,7 @@ function editar_enfer() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+     tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -346,7 +364,7 @@ function editar_gastro() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+     tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -369,7 +387,7 @@ function editar_agro() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+    tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -392,7 +410,7 @@ function editar_bio() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+    tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -415,7 +433,7 @@ function editar_vet() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET fecha_entrada = '$fecha_entrada', cantidad = '$cantidad',
-    unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
+    tipo = '$tipo', unidad = '$unidad', nombre = '$nombre', fecha_caducidad = '$fecha_caducidad', marca = '$marca',
     existencia = '$existencia', categoria = '$categoria' WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
@@ -540,6 +558,134 @@ function calculo_vet() {
     require_once ("db.php");
     extract($_POST);
     $consulta="UPDATE insumo SET  existencia = '$existencia' - '$entregado', entregado = '$entregado' WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/veterinaria.php?categoria=VETERINARIA');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/veterinaria.php?categoria=VETERINARIA');
+         </script>";
+}
+
+}
+
+function editar_recibo() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/insumos.php');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/insumo.php');
+         </script>";
+}
+
+}
+
+function recibo_enfer() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/enfermeria.php?categoria=ENFERMERIA');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/enfermeria.php?categoria=ENFERMERIA');
+         </script>";
+}
+
+}
+function recibo_gastro() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/gastronomia.php?categoria=GASTRONOMIA');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/gastronomia.php?categoria=GASTRONOMIA');
+         </script>";
+}
+
+}
+function recibo_agro() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/agroindustrial.php?categoria=AGROINDUSTRIAL');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/agroindustrial.php?categoria=AGROINDUSTRIAL');
+         </script>";
+}
+
+}
+function recibo_bio() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
+    $resultado=mysqli_query($conexion, $consulta);
+
+   if($resultado){
+        echo "
+        <script language='JavaScript'>
+        alert('La entrega fue completada ');
+        location.assign('../views/biotecnologia.php?categoria=BIOTECNOLOGIA');
+        </script>";
+   } else{
+         echo "<script language='JavaScript'>
+         alert('Ocurrio un error inesperado');
+         location.assign('../views/biotecnologia.php?categoria=BIOTECNOLOGIA');
+         </script>";
+}
+
+}
+function recibo_vet() {
+    require_once ("db.php");
+    extract($_POST);
+    $consulta="UPDATE insumo SET  existencia = '$existencia' + '$recibido', cantidad = '$cantidad' + '$recibido',
+    recibido = '$recibido'  WHERE id = '$id' ";
     $resultado=mysqli_query($conexion, $consulta);
 
    if($resultado){
