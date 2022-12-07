@@ -1,12 +1,5 @@
 <?php 
 
-session_start();
-error_reporting(0);
-$varsesion = $_SESSION['nombre'];
-
-	if($varsesion== null || $varsesion= ''){
-
-	}
 ////////////////// CONEXION A LA BASE DE DATOS ////////////////////////////////////
 $id = $_GET['id'];
 include_once "header.php";

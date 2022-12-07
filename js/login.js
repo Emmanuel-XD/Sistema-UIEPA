@@ -13,7 +13,7 @@ e.preventDefault();
             window.location.replace("../../views/categorias.php")
         }
         if(response === "error"){
-             var valHtml = `<div class="alert alert-danger" role="alert">Hay un error con tu correo o contraseña intenta de nuevo</div>`;
+             var valHtml = `<div class="text-center alert alert-danger" role="alert">Hay un error con tus credenciales, intenta de nuevo o contacta con el administrador</div>`;
             document.getElementById("alert").innerHTML = valHtml;
             setTimeout(() => { document.getElementById("alert").innerHTML = ``; }, 2500);
         }
