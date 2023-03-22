@@ -1,5 +1,6 @@
 <?php 
 session_start();
+error_reporting(0);
 $usuario = $_SESSION['correo'];
 $permiso = $_SESSION['type'];
 if($usuario == null && $permiso == null){
