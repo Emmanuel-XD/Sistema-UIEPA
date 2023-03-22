@@ -46,37 +46,21 @@
                                 </div>
                               </div>
 
-                                   <div class="row">
+
+                              <div class="row">
                             <div class="col-sm-6">
                               <div class="mb-3">
                                   <label for="rol" class="form-label">Unidad/Medida</label>
-                                  <select name="unidad" id="unidad" class="form-control" required>
-                                  <option value="">--Selecciona una opcion--</option>
-                                  <option value="Litros">Litros</option>
-                                  <option value="Mililitros">Mililitros</option>
-                                  <option value="Piezas">Piezas</option>
-                                  <option value="Kg">Kg</option>
-                                  <option value="Gr">Gr</option>
-                                  <option value="Metros">Metros</option>
-                                  <option value="Paquetes">Paquetes</option>
-                                  <option value="Rollos">Rollos</option>
-                               </select>
+                                  <input type="text"  id="unidad" name="unidad" class="form-control">
+                                  
                                </div>
                                    </div>
 
                             <div class="col-sm-6">
                               <div class="mb-3">
                                   <label for="rol" class="form-label">Tipo</label>
-                                  <select name="tipo" id="tipo" class="form-control" required>
-                                  <option value="">--Selecciona una opcion--</option>
-                                  <option value="Reactivos">Reactivos</option>
-                                  <option value="Farmacos">Farmacos</option>
-                                  <option value="Insumos">Insumos</option>
-                                  <option value="Consumibles medicos">Consumibles medicos</option>
-                                  <option value="Consumibles laboratorio">Consumibles laboratorio</option>
-                                  <option value="Consumibles cocina">Consumibles cocina</option>
-                            
-                               </select>
+                                  <input type="text"  id="tipo" name="tipo" class="form-control">
+                                 
                                </div>
                                    </div>
                                    </div>
@@ -84,7 +68,7 @@
                                    <div class="row">
                         <div class="col-sm-6">
                        <div class="mb-3">
-                        <label for="descripcion" class="form-label">Reactivo/Insumo </label>
+                        <label for="descripcion" class="form-label">Nombre del: Reactivo/Insumo </label>
                         <input type="text"  id="nombre" name="nombre" class="form-control">
                             </div>
                                 </div>

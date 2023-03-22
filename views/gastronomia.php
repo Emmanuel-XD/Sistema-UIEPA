@@ -51,9 +51,10 @@ session_start();
                                         <tr>
                                             <th>Codigo</th>
                                             <th>Fecha Entrada</th>
+                                            <th>Unidad/Medida</th>
                                             <th>Cantidad</th>
                                             <th>Tipo</th>
-                                            <th>Unidad/Medida</th>
+
                                             <th>Reactivo/Insumo</th>
                                             <th>Fecha Caducidad</th>
                                             <th>Marca</th>
@@ -101,9 +102,10 @@ if ($fila['existencia'] < 10) {
 <tr>
 <td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
+<td><?php echo $fila['unidad']; ?></td>
 <td ><?php echo $fila['cantidad']; ?></td>
 <td ><?php echo $fila['tipo']; ?></td>
-<td><?php echo $fila['unidad']; ?></td>
+
 <td><?php echo $fila['nombre']; ?></td>
 <td><?php echo $fila['fecha_caducidad']; ?></td>
 <td><?php echo $fila['marca']; ?></td>
