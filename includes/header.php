@@ -1,6 +1,6 @@
 <?php 
 session_start();
-$usuario = $_SESSION['user'];
+$usuario = $_SESSION['correo'];
 $permiso = $_SESSION['type'];
 if($usuario == null && $permiso == null){
     header ("location: ../includes/sesion/login.php");
@@ -140,13 +140,13 @@ if($usuario == null && $permiso == null){
                 </div>
             </li>
                 
-            <!-- Nav Item - user -->
+            <!-- Nav Item - user 
             <li class="nav-item">
 
                 <a class="nav-link" href="../views/info.php">
                 <i class="fa fa-user" aria-hidden="true"></i>
                     <span>Informacion de sesion</span></a>
-            </li>
+            </li>-->
 <?php }
 ?>
 
@@ -183,12 +183,9 @@ if($usuario == null && $permiso == null){
                     <form
                         class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                         <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
+                            
                             <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
+                               
                             </div>
                         </div>
                     </form>
@@ -257,10 +254,7 @@ if($usuario == null && $permiso == null){
                                 aria-labelledby="userDropdown">
  
                            
-                                <a class="dropdown-item" href="#" >
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
+                               
 
                         
                                 
@@ -276,7 +270,7 @@ if($usuario == null && $permiso == null){
 
                 </nav>
                 <!-- End of Topbar -->
-               <?php include "salir.php";?>
+               <?php include "../views/salir.php";?>
                                 
 
     
