@@ -21,12 +21,13 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .ENFERMERIA {
+    
     background: #05e3be;
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
+     /* border: 2px solid #5a5c69; */
+    border-radius: 16px;
     text-align:center;
     width: 50%;
     margin: 20px;
@@ -38,8 +39,8 @@
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
+     /* border: 2px solid #5a5c69; */
+    border-radius: 16px;
     text-align:center;
     width: 50%;
     margin: 20px;
@@ -51,8 +52,8 @@
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
+     /* border: 2px solid #5a5c69; */
+    border-radius: 16px;
     text-align:center;
     width: 50%;
     margin: 20px;
@@ -63,8 +64,8 @@
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
+    /* border: 2px solid #5a5c69; */
+    border-radius: 16px;
     text-align:center;
     width: 50%;
     margin: 20px;
@@ -77,8 +78,8 @@
     color: #5a5c69;
     font-weight: bold;
     padding: 15px;
-    border: 2px solid #5a5c69;
-    border-radius: 6px;
+     /* border: 2px solid #5a5c69; */
+    border-radius: 16px;
     text-align:center;
     width: 50%;
     margin: 20px;   
@@ -100,13 +101,13 @@
     }
     .pdf 
     {
-        background: #7a191e;
+        background: #7178df;
         text-decoration: none;
         color: #ffffff;
         font-weight: bold;
         padding: 15px;
-        border: 2px solid #5a5c69;
-        border-radius: 6px;
+        /*border: 2px solid #5a5c69;*/
+        border-radius: 16px;
         text-align:center;
         width: 50%;
         margin: 20px;  
