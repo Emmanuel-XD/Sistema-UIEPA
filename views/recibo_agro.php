@@ -34,8 +34,8 @@
                           
                             </div>
                             <div class="form-group">
-                            <label for="nombre" class="form-label">Recibido: </label>
-                            <input type="number"  id="recibidp" name="recibido" class="form-control"  required>
+                            <label for="nombre"  class="form-label">Recibido: </label>
+                            <input type="number"  step=".01" id="recibidp" name="recibido" class="form-control"  required>
                             <input type="hidden" name="accion" value="recibo_agro">
                             <input type="hidden" name="id" value="<?php echo $fila['id']; ?>">   
                         </div>

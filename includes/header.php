@@ -60,8 +60,13 @@ if($usuario == null && $permiso == null){
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-                
-                <div class="sidebar-brand-text mx-1">Sistema - UIEPA</div>
+            <style> 
+                .size{
+                    font-size: 1.875em;
+                } 
+                </style>
+                <div class="sidebar-brand-text mx-1 size">SIAP</div>
+
             </a>
 
             <!-- Divider -->

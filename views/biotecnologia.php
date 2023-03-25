@@ -49,7 +49,6 @@ session_start();
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Codigo</th>
                                             <th>Fecha Entrada</th>
                                             <th>Unidad/Medida</th>
                                             <th>Cantidad</th>
@@ -99,7 +98,6 @@ if ($fila['existencia'] < 10) {
 </style>
 
 <tr>
-<td <?php echo  'class="'.$fila['categoria'] .'"'; ?>><?php echo $fila['id']; ?></td>
 <td><?php echo $fila['fecha_entrada']; ?></td>
 <td><?php echo $fila['unidad']; ?></td>
 <td ><?php echo $fila['cantidad']; ?></td>
